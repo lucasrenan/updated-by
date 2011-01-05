@@ -13,7 +13,6 @@ module UpdatedBy
 
         if self.superclass == ActiveRecord::Base
           include UpdatedBy::Adapters::ActiveRecord
-          
         end
 
       end

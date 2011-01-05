@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110104234220) do
+ActiveRecord::Schema.define(:version => 20110105151244) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -29,5 +29,11 @@ ActiveRecord::Schema.define(:version => 20110104234220) do
   end
 
   add_index "updated_actions", ["updated_id", "updated_type"], :name => "index_updated_actions_on_updated_id_and_updated_type"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
