@@ -27,11 +27,11 @@ module UpdatedBy
       end 
       
       def created_by
-        find_user(self.updated_action.read_attribute(:created_by))
+        find_user(self.updated_action.read_attribute(:created_by)) if self.updated_action
       end
 
       def updated_by
-        find_user(self.updated_action.read_attribute(:updated_by))
+        find_user(self.updated_action.read_attribute(:updated_by)) if self.updated_action
       end
 
       private
