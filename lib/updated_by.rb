@@ -8,9 +8,9 @@ end
 
 
 #FIXME corrigir essa implementacao
-class User < ActiveRecord::Base
-  cattr_accessor :current_user
-end
+# class User < ActiveRecord::Base
+#   cattr_accessor :current_user
+# end
 
 class ApplicationController < ActionController::Base
   before_filter :set_current_user 
