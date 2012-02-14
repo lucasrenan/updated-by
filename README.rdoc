@@ -1,3 +1,53 @@
-= Updated-by
+= Updated By
 
 This project rocks and uses MIT-LICENSE.
+
+= Installation 
+
+Install devise (or other authentication solution)
+
+  gem install devise
+  rails generate devise:install
+  rails generate devise User
+
+Add to Gemfile
+
+  gem "updated_by", :git => 'git://github.com/lucasrenan/updated-by.git'
+
+Run
+
+  bundle install
+
+== If you are using Active Record
+
+Creates the migration for table UpdatedActions
+
+  rails g updated_by_migration m
+
+== Example
+
+  rails g scaffold post title:string content:text
+
+  rake db:migrate
+
+Add update_by to model Post
+
+  class Post < ActiveRecord::Base
+    updated_by
+  end
+
+Add current_user to model User
+
+  class User < ActiveRecord::Base
+    cattr_accessor :current_user
+  end
+
+= This plugin adds two methods (created_by and updated_by) to models that included
+
+  <%- unless @post.created_by.nil? %>
+	criado por: <%= @post.created_by.user_name %>
+  <%- end %>
+
+= ATENTION
+
+To get things working properly, it's necessary that current_user is available and user is logged in.
