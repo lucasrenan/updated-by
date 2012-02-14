@@ -11,11 +11,12 @@ module UpdatedBy
       end
       
       def created_or_updated_by
-        if self.new_record?
-          puts "vai criarrrrrrrrrr"
-        else
-          puts "vai atualizarrrrrrrrrrrr"
-        end
+        warn "not implemented yet"
+        # if self.new_record?
+        #   puts "vai criarrrrrrrrrr"
+        # else
+        #   puts "vai atualizarrrrrrrrrrrr"
+        # end
       end 
       
     end
